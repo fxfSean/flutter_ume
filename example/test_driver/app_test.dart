@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('test App', () {
-    var flutterLogoFinder = find.byTooltip('Open ume panel');
+    final flutterLogoFinder = find.byTooltip('Open ume panel');
 
     late FlutterDriver driver;
 
@@ -13,7 +13,7 @@ void main() {
       driver = await FlutterDriver.connect();
     });
 
-    tearDown(() {
+    tearDownAll(() {
       driver.close();
     });
     
