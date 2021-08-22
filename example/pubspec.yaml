@@ -36,8 +36,6 @@ dev_dependencies:
     sdk: flutter
   test:
     ^1.16.6
-  flutter_test:
-    sdk: flutter
   flutter_ume:
     path: ../
   flutter_ume_kit_ui:
