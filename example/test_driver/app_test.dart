@@ -58,12 +58,5 @@ void main() {
       });
     });
 
-    test('tab debugPrint', () async {
-      await driver.tap(find.text('debugPrint'));
-      expect(await driver.getText(find.text('1')), '1');
-      await driver.tap(find.text('debugPrint'));
-      expect(await driver.getText(find.text('2')), '2');
-    });
-
   });
 }
