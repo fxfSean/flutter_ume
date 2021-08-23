@@ -58,5 +58,18 @@ void main() {
       });
     });
 
+    test('Drag toolbar vertically', () async {
+      await driver.runUnsynchronized(() async {
+        const double dy = 100;
+        var toolbar = find.text('UME');
+        var oldPos = await driver.getBottomLeft(toolbar);
+        print("oldPos: $oldPos");
+        await driver.scroll(toolbar, 0, -dy, Duration(seconds: 1));
+        var newPos = await driver.getBottomLeft(toolbar);
+        print("newPos: $newPos");
+        expect(oldPos.dy - newPos.dy - dy > 0, true);
+      });
+    });
+
   });
 }
