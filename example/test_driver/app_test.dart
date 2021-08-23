@@ -1,5 +1,7 @@
 
 
+import 'dart:io';
+
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
@@ -69,6 +71,17 @@ void main() {
         print("newPos: $newPos");
         expect(oldPos.dy - newPos.dy - dy > 0, true);
       });
+    });
+    
+    test('Tab debugPrint', () async {
+      var debugPrint = find.text('debugPrint');
+      await driver.tap(debugPrint);
+      var pushDetailPage = find.text('Push Detail Page');
+      await driver.tap(pushDetailPage);
+      expect(await driver.getText(find.byValueKey('DetailPageKey')), 'Detail Page');
+      sleep(Duration(seconds: 1));
+      await driver.tap(find.byTooltip('Back'));
+      expect(await driver.getText(find.text('UME')), 'UME');
     });
 
   });
