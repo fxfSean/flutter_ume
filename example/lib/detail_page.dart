@@ -13,7 +13,10 @@ class DetailPage extends StatelessWidget {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Detail Page'),
+            const Text(
+              'Detail Page',
+              key: ValueKey('DetailPageKey'),
+            ),
             TextButton(
                 onPressed: () {
                   showDialog(
